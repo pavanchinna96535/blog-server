@@ -8,10 +8,13 @@ const app = express();
 const authRoutes = require("./Routes/authRoutes");
 const blogRoutes = require("./Routes/blogRoutes");
 
+const allowedOrigins = ['http://localhost:3000', 'https://blog-client-nu-mauve.vercel.app/'];
+
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: allowedOrigins,
   credentials: true,
 }));
+
 
 app.use(express.json());
 
